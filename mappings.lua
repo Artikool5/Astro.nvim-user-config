@@ -21,12 +21,7 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
-    -- Мои клавиши --
-    vim.api.nvim_set_keymap("n","H","^", { noremap = true}),
-    vim.api.nvim_set_keymap("n","L","$", { noremap = true}),
-    vim.api.nvim_set_keymap("n","J","<C-d>", { noremap = false}),
-    vim.api.nvim_set_keymap("n","K","<C-U>", { noremap = false}),
-
+    
     require('neoscroll').setup(
       {
         -- All these keys will be mapped to their corresponding default scrolling animation
@@ -43,7 +38,23 @@ return {
         performance_mode = false,    -- Disable "Performance Mode" on all buffers.
       }
     ),
+
+    -- Мои клавиши --
+    vim.api.nvim_set_keymap("n","H","^", { noremap = true}),
+    vim.api.nvim_set_keymap("n","L","$", { noremap = true}),
+    vim.api.nvim_set_keymap("n","J","<C-d>", { noremap = true}),
+    vim.api.nvim_set_keymap("n","K","<C-U>", { noremap = true}),
+    -- -- RIGHT
+    -- vim.api.nvim_set_keymap({'n', 'x', 'o'},"s","l", { noremap = true}),
+    -- -- DOWN
+    -- vim.api.nvim_set_keymap({'n', 'x', 'o'},"t","j", { noremap = true}),
+    -- -- UP
+    -- vim.api.nvim_set_keymap({'n', 'x', 'o'},"n","k", { noremap = true}),
+
     require('leap').add_default_mappings(),
+    -- vim.keymap.set({'n', 'x', 'o'}, 'l', '<Plug>(leap-forward-to)', { noremap = true}),
+    -- vim.keymap.set({'n', 'x', 'o'}, 'L', '<Plug>(leap-backward-to)', { noremap = true}),
+
   },
   v = {
     vim.api.nvim_set_keymap("v","H","^", { noremap = true}),
